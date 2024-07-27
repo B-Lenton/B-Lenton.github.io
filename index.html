@@ -1,25 +1,21 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
     <title>Guitars</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One"
-      rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <script async src="script.js"></script>
   </head>
 
   <body>
-    <header>
-      <h1>Guitars!</h1>
-    </header>
-
     <nav>
+      <header>
+        <h1>Guitars!</h1>
+      </header>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Get a Quote</a></li>
+        <li><a href="index.html">Get a Quote</a></li>
         <li><a href="#">About Us</a></li>
       </ul>
     </nav>
@@ -32,22 +28,39 @@
 
       <article>
         <h2>Get a Quote</h2>
-        <form action="https://submit-form.com/98GfmJupR">
-          
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Email" required />
+        <form action="https://submit-form.com/98GfmJupR" class="vertical-form">
 
-          <label for="location">Location</label>
-          <input type="text" id="location" name="location" placeholder="Location" required />
-          
-          <label for="make">Make</label>
-          <input type="text" id="make" name="make" placeholder="Make" />
-          
-          <label for="model">Model</label>
-          <input type="text" id="model" name="model" placeholder="Model" />
-          
-          <label for="images">Images</label>
-          <input type="file" id="images" name="images" multiple />
+          <input
+            type="hidden"
+            name="_redirect"
+            value="https://b-lenton.github.io/success.html"
+          />
+          <input type="hidden" name="_append" value="false" />
+
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email" required />
+          </div>
+
+          <div>
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="Location" required />
+          </div>
+
+          <div>
+            <label for="make">Make</label>
+            <input type="text" id="make" name="make" placeholder="Make" />
+          </div>
+
+          <div>
+            <label for="model">Model</label>
+            <input type="text" id="model" name="model" placeholder="Model" />
+          </div>
+
+          <div>
+            <label for="images">Images</label>
+            <input type="file" id="images" name="images" multiple />
+          </div>
 
           <button type="submit">Get Quote</button>
         </form>        

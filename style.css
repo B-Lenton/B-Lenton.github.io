@@ -55,6 +55,55 @@ body, html{
 }
 
 /* ================
- * New section (TODO)
+ * Forms
  * ================
 */
+.vertical-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 500px;
+}
+
+label.required:after {
+    content: "*";
+    color: red;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0848b9;
+    color: #ececec;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+nav > ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav > ul > li > a {
+    background-color: #ececec;
+    padding: 0.5rem 1rem;
+    border-radius: 1.25rem;
+    text-decoration: none;
+    color: black;
+}
+
+main {
+    padding: 2rem;
+}
+
+article {
+    padding-top: 1rem;
+}
+
+button {
+    align-self: end;
+    padding: 0.5rem 2rem;
+    border-radius: 1.25rem;
+}
