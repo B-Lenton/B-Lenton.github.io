@@ -6,7 +6,12 @@
 
     <title>Guitars</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.48.0/web/lr-file-uploader-regular.min.css"
+    />
     <script async src="script.js"></script>
+    <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
   </head>
 
   <body>
@@ -58,8 +63,24 @@
           </div>
 
           <div>
-            <label for="images">Images:</label>
-            <input type="file" id="images" name="images" multiple />
+            <lr-config
+              ctx-name="images"
+              pubkey="c363aacae6945737e2d8"
+              max-local-file-size-bytes="1000000000"
+              multiple
+              multiple-min="1"
+              multiple-max="10"
+              img-only
+              group-output
+              source-list="local, camera, dropbox, gdrive, gphotos"
+            ></lr-config>
+            <lr-file-uploader-regular
+              class="my-theme"
+              ctx-name="images"
+              class="my-config uc-light"
+            >
+              <lr-form-input ctx-name="images"></lr-form-input>
+            </lr-file-uploader-regular>
           </div>
 
           <button type="submit">Get Quote</button>
@@ -70,5 +91,12 @@
     <footer>
       <p>©Copyright 2024, FNC. All rights reserved.</p>
     </footer>
+
+    <script type="module">
+      import * as LR from "https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.48.0/web/lr-file-uploader-regular.min.js";
+
+      LR.registerBlocks(LR);
+    </script>
+
   </body>
 </html>

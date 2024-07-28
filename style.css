@@ -54,6 +54,38 @@ body, html{
     scroll-behavior: smooth; 
 }
 
+
+/* ================
+ * Auto light/dark theme
+ * ================
+*/
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+:root {
+  --light: #f7f7f7;
+  --dark: #323232;
+  --accent-light: #6db193;
+  --accent-dark: #295f4e;
+  --text: var(--dark);
+  --bg: var(--light);
+  --bg-nav: var(--accent-light);
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: var(--light);
+    --bg: var(--dark);
+    --bg-nav: var(--accent-dark);
+  }
+}
+
+
 /* ================
  * Forms
  * ================
@@ -65,7 +97,7 @@ body, html{
     max-width: 500px;
 }
 
-label.required:after {
+div:has(input[required]) > label::after {
     content: "*";
     color: red;
 }
@@ -73,8 +105,7 @@ label.required:after {
 nav {
     display: flex;
     justify-content: space-between;
-    background-color: #0848b9;
-    color: #ececec;
+    background-color: var(--bg-nav);
     align-items: center;
     padding: 1rem;
     gap: 1rem;
@@ -87,11 +118,16 @@ nav > ul {
 }
 
 nav > ul > li > a {
-    background-color: #ececec;
-    padding: 0.5rem 1rem;
-    border-radius: 1.25rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 1.5rem;
     text-decoration: none;
-    color: black;
+    background-color: #f4e5c2;
+    color: var(--dark);
+    border: 2px solid var(--dark);
+}
+
+nav > ul > li > a:hover {
+    box-shadow: 0px 0px 6px 1px var(--dark);
 }
 
 main {
@@ -109,10 +145,42 @@ form > div {
 
 form > button {
     align-self: end;
-    padding: 0.5rem 2rem;
-    border-radius: 1.25rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 1.5rem;
+    background-color: var(--accent-dark);
+    color: var(--light);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    font-weight: bold;
+}
+
+form > button:hover {
+    box-shadow: 0px 0px 6px 1px var(--dark);
 }
 
 footer {
     padding-inline: 2rem;
+}
+
+
+/* ================
+ * File upload
+ * ================
+*/
+.my-theme {
+    --uc-primary-oklch-dark: 97% 0 0;
+    --uc-primary-oklch-light: 10% 0 0;
+}
+
+r-file-uploader-regular {
+    position: relative;
+    display: inline-block;
+}
+
+lr-form-input {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
 }
